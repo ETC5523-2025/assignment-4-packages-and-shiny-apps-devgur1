@@ -1,5 +1,6 @@
 ---
-output: github_document
+title: "assignment4packagesdevgur1"
+format: gfm
 ---
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
@@ -18,16 +19,39 @@ knitr::opts_chunk$set(
 <!-- badges: start -->
 <!-- badges: end -->
 
-The goal of assignment4packagesdevgur1 is to ...
+The goal of this package is to provide an interactive way to explore and communicate insights from the Australian Bushfire dataset used in earlier assignments for ETC5523.
+It combines data, analysis functions, and a Shiny dashboard to help users visualise bushfire trends and understand key relationships between fire weather, temperature anomalies, and geographic regions.
+
+## Features
+
+- Contains the dataset a2_bushfire as an .rda object
+
+- Includes preprocessing and cleaning scripts inside data-raw/
+
+- Provides a Shiny app (inst/app/app.R) for interactive visualisation
+
+- Includes documentation generated with roxygen2
+
+- Fully installable as an R package and deployable with pkgdown
+
 
 ## Installation
 
 You can install the development version of assignment4packagesdevgur1 from [GitHub](https://github.com/) with:
 
-``` r
+```{r}
 # install.packages("pak")
 pak::pak("ETC5523-2025/assignment-4-packages-and-shiny-apps-devgur1")
 ```
+
+After installation, you can load the package and launch the app:
+
+```{r}
+library(assignment4packagesdevgur1)
+run_app()
+
+```
+This will open the Shiny app in your browser.
 
 ## Example
 
@@ -35,21 +59,39 @@ This is a basic example which shows you how to solve a common problem:
 
 ```{r example}
 library(assignment4packagesdevgur1)
-## basic example code
+
+# Load the bushfire dataset
+data("a2_bushfire")
+
+# Display summary
+summary(a2_bushfire)
 ```
 
-What is special about using `README.Rmd` instead of just `README.md`? You can include R chunks like so:
+## The Shiny App
 
-```{r cars}
-summary(cars)
+The interactive dashboard allows you to:
+
+- Select regions or years to explore bushfire data
+
+- Visualise key trends in temperature, rainfall, and fire severity
+
+- Interpret results through descriptive text panels
+
+To run it directly:
+```{r}
+assignment4packagesdevgur1::run_app()
+
 ```
 
-You'll still need to render `README.Rmd` regularly, to keep `README.md` up-to-date. `devtools::build_readme()` is handy for this.
+## pkgdown Site
+A complete documentation website (functions, data, vignette, and app details) is available at:
+https://ETC5523-2025.github.io/assignment-4-packages-and-shiny-apps-devgur1
 
-You can also embed plots, for example:
+## License
+This package is licensed under the MIT License.
 
-```{r pressure, echo = FALSE}
-plot(pressure)
-```
+## Author
+Dev Karan Gur
+Monash University – ETC5523: Communicating with Data
+Semester 2, 2025
 
-In that case, don't forget to commit and push the resulting figure files, so they display on GitHub and CRAN.
