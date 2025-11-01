@@ -1,7 +1,7 @@
 ---
-title: "assignment4packagesdevgur1"
+title: "Exploring Australian Bushfire Data with R"
 format: gfm
----
+--- 
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
@@ -13,8 +13,6 @@ knitr::opts_chunk$set(
   out.width = "100%"
 )
 ```
-
-# assignment4packagesdevgur1
 
 <!-- badges: start -->
 <!-- badges: end -->
@@ -39,19 +37,18 @@ It combines data, analysis functions, and a Shiny dashboard to help users visual
 
 You can install the development version of assignment4packagesdevgur1 from [GitHub](https://github.com/) with:
 
-```{r}
+```{r install, echo=TRUE}
 # install.packages("pak")
 pak::pak("ETC5523-2025/assignment-4-packages-and-shiny-apps-devgur1")
 ```
 
 After installation, you can load the package and launch the app:
 
-```{r}
+```{r, eval=FALSE, message=FALSE, warning=FALSE, echo=TRUE}
 library(assignment4packagesdevgur1)
 run_app()
-
 ```
-This will open the Shiny app in your browser.
+This will open the Shiny app in the browser.
 
 ## Example
 
@@ -65,7 +62,7 @@ data("a2_bushfire")
 
 # Display summary
 summary(a2_bushfire)
-```
+``` 
 
 ## The Shiny App
 
@@ -78,7 +75,8 @@ The interactive dashboard allows you to:
 - Interpret results through descriptive text panels
 
 To run it directly:
-```{r}
+
+```{r, eval=FALSE, echo=TRUE}
 assignment4packagesdevgur1::run_app()
 
 ```
@@ -86,7 +84,7 @@ assignment4packagesdevgur1::run_app()
 ## pkgdown Site
 A complete documentation website (functions, data, vignette, and app details) is available at:
 https://ETC5523-2025.github.io/assignment-4-packages-and-shiny-apps-devgur1
-
+  
 ## License
 This package is licensed under the MIT License.
 

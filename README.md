@@ -1,4 +1,4 @@
-# assignment4packagesdevgur1
+# Exploring Australian Bushfire Data with R
 
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
@@ -39,7 +39,7 @@ pak::pak("ETC5523-2025/assignment-4-packages-and-shiny-apps-devgur1")
 #> 
 #> 
 #> ℹ No downloads are needed
-#> ✔ 1 pkg + 29 deps: kept 27 [4.4s]
+#> ✔ 1 pkg + 29 deps: kept 27 [5.4s]
 ```
 
 After installation, you can load the package and launch the app:
@@ -47,25 +47,9 @@ After installation, you can load the package and launch the app:
 ``` r
 library(assignment4packagesdevgur1)
 run_app()
-#> Loading required package: shiny
-#> 
-#> Attaching package: 'bslib'
-#> The following object is masked from 'package:utils':
-#> 
-#>     page
-#> 
-#> Attaching package: 'dplyr'
-#> The following objects are masked from 'package:stats':
-#> 
-#>     filter, lag
-#> The following objects are masked from 'package:base':
-#> 
-#>     intersect, setdiff, setequal, union
 ```
 
-<div style="width: 100% ; height: 400px ; text-align: center; box-sizing: border-box; -moz-box-sizing: border-box; -webkit-box-sizing: border-box;" class="muted well">Shiny applications not supported in static R Markdown documents</div>
-
-This will open the Shiny app in your browser.
+This will open the Shiny app in the browser.
 
 ## Example
 
@@ -103,8 +87,6 @@ To run it directly:
 ``` r
 assignment4packagesdevgur1::run_app()
 ```
-
-<div style="width: 100% ; height: 400px ; text-align: center; box-sizing: border-box; -moz-box-sizing: border-box; -webkit-box-sizing: border-box;" class="muted well">Shiny applications not supported in static R Markdown documents</div>
 
 ## pkgdown Site
 
