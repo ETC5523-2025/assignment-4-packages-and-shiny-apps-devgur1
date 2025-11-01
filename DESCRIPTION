@@ -1,0 +1,24 @@
+Package: assignment4packagesdevgur1
+Title: Communicating with Data — Shiny Package by Dev Karan Gur
+Version: 0.0.1
+Authors@R: 
+    person("Dev Karan", "Gur", , "dgur0010@student.monash.edu", role = c("aut", "cre"))
+Description: R package created for ETC5523 Assignment 4. 
+    Integrates Assignment 1 (Breaking Down Articles) and Assignment 2 (Bushfire Risk Attribution). 
+    Includes two datasets ('a1_media', 'a2_bushfire'), an interactive Shiny app, and roxygen2 documentation.
+License: MIT + file LICENSE
+Encoding: UTF-8
+LazyData: true
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.3.3
+Depends: R (>= 4.0.0)
+VignetteBuilder: knitr
+Imports:
+    shiny
+Suggests:
+    bslib,
+    ggplot2,
+    dplyr,
+    tibble,
+    knitr,
+    rmarkdown
