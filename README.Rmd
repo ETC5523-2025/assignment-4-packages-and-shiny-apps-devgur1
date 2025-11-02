@@ -17,7 +17,7 @@ knitr::opts_chunk$set(
 <!-- badges: start -->
 <!-- badges: end -->
 
-The goal of this package is to provide an interactive way to explore and communicate insights from the Australian Bushfire dataset used in earlier assignments for ETC5523.
+The goal of this package is to provide an interactive way to explore and communicate insights from the Australian Bushfire dataset used in earlier assignments for ETC5523-Communicating with Data.
 It combines data, analysis functions, and a Shiny dashboard to help users visualise bushfire trends and understand key relationships between fire weather, temperature anomalies, and geographic regions.
 
 ## Features

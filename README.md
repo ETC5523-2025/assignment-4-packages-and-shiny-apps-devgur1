@@ -9,10 +9,10 @@
 
 The goal of this package is to provide an interactive way to explore and
 communicate insights from the Australian Bushfire dataset used in
-earlier assignments for ETC5523. It combines data, analysis functions,
-and a Shiny dashboard to help users visualise bushfire trends and
-understand key relationships between fire weather, temperature
-anomalies, and geographic regions.
+earlier assignments for ETC5523-Communicating with Data. It combines
+data, analysis functions, and a Shiny dashboard to help users visualise
+bushfire trends and understand key relationships between fire weather,
+temperature anomalies, and geographic regions.
 
 ## Features
 
@@ -38,8 +38,13 @@ pak::pak("ETC5523-2025/assignment-4-packages-and-shiny-apps-devgur1")
 #> ✔ Loading metadata database ... done
 #> 
 #> 
-#> ℹ No downloads are needed
-#> ✔ 1 pkg + 29 deps: kept 27 [5.4s]
+#> → Will update 1 package.
+#> → Will download 1 package with unknown size.
+#> + assignment4packagesdevgur1 0.0.1 → 0.0.1 👷🏿‍♂️🔧 ⬇ (GitHub: ddbc95c)
+#> ℹ Getting 1 pkg with unknown size
+#> ✔ Cached copy of assignment4packagesdevgur1 0.0.1 (source) is the latest build
+#> ✔ Installed assignment4packagesdevgur1 0.0.1 (github::ETC5523-2025/assignment-4-packages-and-shiny-apps-devgur1@ddbc95c) (21ms)
+#> ✔ 1 pkg + 29 deps: kept 26, upd 1 [5.5s]
 ```
 
 After installation, you can load the package and launch the app:

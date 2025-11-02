@@ -1,0 +1,46 @@
+---
+title: "Getting Started with the Bushfire Data Explorer"
+output: rmarkdown::html_vignette
+---
+
+vignette: >
+  %\VignetteIndexEntry{Getting Started with the Bushfire Data Explorer}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  message = FALSE,
+  warning = FALSE
+)
+```
+
+## Introduction
+This vignette demonstrates how to explore the datasets and run the interactive Shiny dashboard provided in the Bushfire Data Explorer package.
+```{r}
+library(assignment4packagesdevgur1)
+```
+
+## Explore the Data
+The package includes two datasets:
+
+- a1_media – Communication styles across articles and media types
+
+- a2_bushfire – Historical bushfire metrics (FWI, TX7x, Rain_mm)
+
+```{r}
+head(a2_bushfire)
+summary(a2_bushfire)
+
+```
+
+## Launch the Interactive Dashboard
+We can explore both datasets using the built-in Shiny app.
+```{r}
+# Launch the Shiny app (run in RStudio, not in static docs)
+# run_app()
+```
+

@@ -17,3 +17,7 @@ knitr::opts_chunk$set(
 ```{r setup}
 library(assignment4packagesdevgur1)
 ```
+
+# Introduction
+
+This vignette demonstrates how to load the datasets (`a1_media`, `a2_bushfire`) and explore them using R functions and the Shiny app included in this package.
