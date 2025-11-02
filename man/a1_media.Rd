@@ -7,8 +7,8 @@
 \format{
 A tibble with X rows and Y variables:
 \describe{
-\item{variable1}{Description...}
-\item{variable2}{Description...}
+  \item{variable1}{Description...}
+  \item{variable2}{Description...}
 }
 
 A tibble with 3 rows and 7 variables (medium, lede, focus, evidence, tone, etc.)
