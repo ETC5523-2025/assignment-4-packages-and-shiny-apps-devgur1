@@ -1,14 +1,11 @@
-#' Launch the Shiny App
+#' Launch the Bushfire Data Explorer App
 #'
-#' Opens the interactive Bushfire Data Explorer in your browser.
-#'
-#' @return Invisibly returns \code{NULL}. Called for its side-effect of launching the app.
+#' @return A Shiny app object
+#' @export
 #' @examples
-#' \dontrun{
+#' if (interactive()) {
 #'   run_app()
 #' }
-#' @export
 run_app <- function() {
-  app_dir <- system.file("app", package = "bushfiredataexplorer")
-  shiny::runApp(app_dir, launch.browser = TRUE)
+  shiny::shinyAppDir(system.file("app", package = "bushfiredataexplorer"))
 }

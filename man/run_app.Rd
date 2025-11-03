@@ -2,18 +2,18 @@
 % Please edit documentation in R/run_app.R
 \name{run_app}
 \alias{run_app}
-\title{Launch the Shiny App}
+\title{Launch the Bushfire Data Explorer App}
 \usage{
 run_app()
 }
 \value{
-Invisibly returns \code{NULL}. Called for its side-effect of launching the app.
+A Shiny app object
 }
 \description{
-Opens the interactive Bushfire Data Explorer in your browser.
+Launch the Bushfire Data Explorer App
 }
 \examples{
-\dontrun{
+if (interactive()) {
   run_app()
 }
 }
