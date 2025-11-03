@@ -1,0 +1,22 @@
+url: https://etc5523-2025.github.io/assignment-4-packages-and-shiny-apps-devgur1
+title: "Bushfire Data Explorer"
+template:
+  bootstrap: 5
+  bootswatch: flatly
+  bslib:
+    base_font: { google: "Inter" }
+    heading_font: { google: "Poppins" }
+    code_font: { google: "JetBrains Mono" }
+
+navbar:
+  title: "Bushfire Data Explorer"
+  left:
+    - text: "Reference"
+      href: reference/index.html
+    - text: "Articles"
+      href: articles/index.html
+    - text: "Vignettes"
+      href: articles/index.html
+  right:
+    - icon: fa-github
+      href: https://github.com/ETC5523-2025/assignment-4-packages-and-shiny-apps-devgur1

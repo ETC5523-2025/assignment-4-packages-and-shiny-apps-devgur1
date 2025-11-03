@@ -45,7 +45,7 @@ pak::pak("ETC5523-2025/assignment-4-packages-and-shiny-apps-devgur1")
 After installation, you can load the package and launch the app:
 
 ```{r, eval=FALSE, message=FALSE, warning=FALSE, echo=TRUE}
-library(assignment4packagesdevgur1)
+library(bushfiredataexplorer)
 run_app()
 ```
 This will open the Shiny app in the browser.
@@ -55,7 +55,7 @@ This will open the Shiny app in the browser.
 This is a basic example which shows you how to solve a common problem:
 
 ```{r example}
-library(assignment4packagesdevgur1)
+library(bushfiredataexplorer)
 
 # Load the bushfire dataset
 data("a2_bushfire")
@@ -77,7 +77,7 @@ The interactive dashboard allows you to:
 To run it directly:
 
 ```{r, eval=FALSE, echo=TRUE}
-assignment4packagesdevgur1::run_app()
+bushfiredataexplorer::run_app()
 
 ```
 

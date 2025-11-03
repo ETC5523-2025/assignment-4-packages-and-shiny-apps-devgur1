@@ -90,10 +90,10 @@ The interactive dashboard allows you to:
 To run it directly:
 
 ``` r
-assignment4packagesdevgur1::run_app()
+bushfiredataexplorer::run_app()
 ```
 
-## pkgdown Site
+## Pkgdown Site
 
 A complete documentation website (functions, data, vignette, and app
 details) is available at:

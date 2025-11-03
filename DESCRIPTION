@@ -1,6 +1,6 @@
-Package: assignment4packagesdevgur1
-Title: Communicating with Data — Shiny Bushfire Dashboard
-Version: 0.0.1
+Package: bushfiredataexplorer
+Title: Bushfire Data Explorer
+Version: 0.0.2
 Authors@R: 
     person("Dev Karan", "Gur", , "dgur0010@student.monash.edu", role = c("aut", "cre"))
 Description: R package created for ETC5523 Assignment 4. 

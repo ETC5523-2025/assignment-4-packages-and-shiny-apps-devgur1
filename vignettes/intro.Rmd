@@ -21,7 +21,7 @@ knitr::opts_chunk$set(
 ## Introduction
 This vignette demonstrates how to explore the datasets and run the interactive Shiny dashboard provided in the Bushfire Data Explorer package.
 ```{r}
-library(assignment4packagesdevgur1)
+library(bushfiredataexplorer)
 ```
 
 ## Explore the Data
