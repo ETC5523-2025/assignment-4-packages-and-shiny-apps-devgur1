@@ -80,97 +80,43 @@
 <div class="section level1">
 <div class="page-header"><h1 id="exploring-australian-bushfire-data-with-r">Exploring Australian Bushfire Data with R<a class="anchor" aria-label="anchor" href="#exploring-australian-bushfire-data-with-r"></a>
 </h1></div>
-<!-- README.md is generated from README.Rmd. Please edit that file -->
 <!-- badges: start -->
 <!-- badges: end -->
-<p>The goal of this package is to provide an interactive way to explore and communicate insights from the Australian Bushfire dataset used in earlier assignments for ETC5523-Communicating with Data. It combines data, analysis functions, and a Shiny dashboard to help users visualise bushfire trends and understand key relationships between fire weather, temperature anomalies, and geographic regions.</p>
-<div class="section level2">
-<h2 id="features">Features<a class="anchor" aria-label="anchor" href="#features"></a>
-</h2>
-<ul>
-<li><p>Contains the dataset a2_bushfire as an .rda object</p></li>
-<li><p>Includes preprocessing and cleaning scripts inside data-raw/</p></li>
-<li><p>Provides a Shiny app (inst/app/app.R) for interactive visualisation</p></li>
-<li><p>Includes documentation generated with roxygen2</p></li>
-<li><p>Fully installable as an R package and deployable with pkgdown</p></li>
-</ul>
-</div>
+<p><strong>bushfiredataexplorer</strong> is an R package that provides Australian bushfire data and an interactive Shiny dashboard for visualising fire-risk trends.<br>
+It was created for <em>ETC5523: Communicating with Data</em> at Monash University.</p>
 <div class="section level2">
 <h2 id="installation">Installation<a class="anchor" aria-label="anchor" href="#installation"></a>
 </h2>
-<p>We can install the development version of <strong>bushfiredataexplorer</strong> from <a href="https://github.com/" class="external-link">GitHub</a> with:</p>
+<p>You can install the development version of <strong>bushfiredataexplorer</strong> from<br><a href="https://github.com/ETC5523-2025/assignment-4-packages-and-shiny-apps-devgur1" class="external-link">GitHub</a> with:</p>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># install.packages("pak")</span></span>
-<span><span class="fu">pak</span><span class="fu">::</span><span class="fu"><a href="https://pak.r-lib.org/reference/pak.html" class="external-link">pak</a></span><span class="op">(</span><span class="st">"ETC5523-2025/assignment-4-packages-and-shiny-apps-devgur1"</span><span class="op">)</span></span>
-<span><span class="co">#&gt; ℹ Loading metadata database</span></span>
-<span><span class="co">#&gt; ✔ Loading metadata database ... done</span></span>
-<span><span class="co">#&gt; </span></span>
-<span><span class="co">#&gt; </span></span>
-<span><span class="co">#&gt; → Will update 1 package.</span></span>
-<span><span class="co">#&gt; → Will download 1 package with unknown size.</span></span>
-<span><span class="co">#&gt; + bushfiredataexplorer 0.0.2 → 0.0.2 👷🏽‍♂️🔧 ⬇ (GitHub: 8b3d1a1)</span></span>
-<span><span class="co">#&gt; ℹ Getting 1 pkg with unknown size</span></span>
-<span><span class="co">#&gt; ✔ Got bushfiredataexplorer 0.0.2 (source) (324.73 kB)</span></span>
-<span><span class="co">#&gt; ℹ Packaging bushfiredataexplorer 0.0.2</span></span>
-<span><span class="co">#&gt; ✔ Packaged bushfiredataexplorer 0.0.2 (370ms)</span></span>
-<span><span class="co">#&gt; ℹ Building bushfiredataexplorer 0.0.2</span></span>
-<span><span class="co">#&gt; ✔ Built bushfiredataexplorer 0.0.2 (707ms)</span></span>
-<span><span class="co">#&gt; ✔ Installed bushfiredataexplorer 0.0.2 (github::ETC5523-2025/assignment-4-packages-and-shiny-apps-devgur1@8b3d1a1) (20ms)</span></span>
-<span><span class="co">#&gt; ✔ 1 pkg + 29 deps: kept 26, upd 1, dld 1 (NA B) [8.8s]</span></span></code></pre></div>
-<p>After installation, we can load the package and launch the app:</p>
+<span><span class="fu">pak</span><span class="fu">::</span><span class="fu"><a href="https://pak.r-lib.org/reference/pak.html" class="external-link">pak</a></span><span class="op">(</span><span class="st">"ETC5523-2025/assignment-4-packages-and-shiny-apps-devgur1"</span><span class="op">)</span></span></code></pre></div>
+<p>Repo name: ETC5523-2025/assignment-4-packages-and-shiny-apps-devgur1 Package name: bushfiredataexplorer</p>
+<p>After installation:</p>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/ETC5523-2025/assignment-4-packages-and-shiny-apps-devgur1" class="external-link">bushfiredataexplorer</a></span><span class="op">)</span></span>
 <span><span class="fu"><a href="reference/run_app.html">run_app</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
-<p>This will open the Shiny app in the browser.</p>
+<p>This launches the Shiny app in your browser.</p>
 </div>
 <div class="section level2">
 <h2 id="example">Example<a class="anchor" aria-label="anchor" href="#example"></a>
 </h2>
-<p>This is a basic example which shows how we can solve a common problem:</p>
+<p>Here’s a quick example using the dataset included with the package:</p>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/ETC5523-2025/assignment-4-packages-and-shiny-apps-devgur1" class="external-link">bushfiredataexplorer</a></span><span class="op">)</span></span>
-<span></span>
-<span><span class="co"># Loading the bushfire dataset</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/utils/data.html" class="external-link">data</a></span><span class="op">(</span><span class="st">"a2_bushfire"</span><span class="op">)</span></span>
 <span></span>
-<span><span class="co"># Displaying summary</span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/base/summary.html" class="external-link">summary</a></span><span class="op">(</span><span class="va">a2_bushfire</span><span class="op">)</span></span>
-<span><span class="co">#&gt;       year           FWI              TX7x          Rain_mm     </span></span>
-<span><span class="co">#&gt;  Min.   :1900   Min.   : 9.204   Min.   :28.53   Min.   :373.5  </span></span>
-<span><span class="co">#&gt;  1st Qu.:1930   1st Qu.:20.096   1st Qu.:33.66   1st Qu.:448.6  </span></span>
-<span><span class="co">#&gt;  Median :1960   Median :30.236   Median :37.54   Median :500.8  </span></span>
-<span><span class="co">#&gt;  Mean   :1960   Mean   :30.034   Mean   :37.41   Mean   :499.4  </span></span>
-<span><span class="co">#&gt;  3rd Qu.:1990   3rd Qu.:39.692   3rd Qu.:41.44   3rd Qu.:556.2  </span></span>
-<span><span class="co">#&gt;  Max.   :2020   Max.   :54.404   Max.   :46.00   Max.   :636.0</span></span></code></pre></div>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://ggplot2.tidyverse.org" class="external-link">ggplot2</a></span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html" class="external-link">ggplot</a></span><span class="op">(</span><span class="va">a2_bushfire</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html" class="external-link">aes</a></span><span class="op">(</span><span class="va">year</span>, <span class="va">FWI</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_path.html" class="external-link">geom_line</a></span><span class="op">(</span>color <span class="op">=</span> <span class="st">"#0072B2"</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_smooth.html" class="external-link">geom_smooth</a></span><span class="op">(</span>method <span class="op">=</span> <span class="st">"loess"</span>, se <span class="op">=</span> <span class="cn">FALSE</span>, color <span class="op">=</span> <span class="st">"#E69F00"</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html" class="external-link">labs</a></span><span class="op">(</span>title <span class="op">=</span> <span class="st">"Fire Weather Index over time"</span>, x <span class="op">=</span> <span class="st">"Year"</span>, y <span class="op">=</span> <span class="st">"FWI"</span><span class="op">)</span></span></code></pre></div>
+<p><img src="reference/figures/README-example-plot-1.png" width="100%"> The plot shows long-term changes in Fire Weather Index (FWI), a measure of bushfire danger influenced by temperature, humidity, and wind speed.</p>
 </div>
 <div class="section level2">
-<h2 id="the-shiny-app">The Shiny App<a class="anchor" aria-label="anchor" href="#the-shiny-app"></a>
+<h2 id="documentation">Documentation<a class="anchor" aria-label="anchor" href="#documentation"></a>
 </h2>
-<p>The interactive dashboard allows you to:</p>
-<ul>
-<li><p>Select regions or years to explore bushfire data</p></li>
-<li><p>Visualise key trends in temperature, rainfall, and fire severity</p></li>
-<li><p>Interpret results through descriptive text panels</p></li>
-</ul>
-<p>To run it directly:</p>
-<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu">bushfiredataexplorer</span><span class="fu">::</span><span class="fu"><a href="reference/run_app.html">run_app</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
-</div>
-<div class="section level2">
-<h2 id="pkgdown-site">Pkgdown Site<a class="anchor" aria-label="anchor" href="#pkgdown-site"></a>
-</h2>
-<p>A complete documentation website (functions, data, vignette, and app details) is available at: <a href="https://ETC5523-2025.github.io/assignment-4-packages-and-shiny-apps-devgur1" class="external-link uri">https://ETC5523-2025.github.io/assignment-4-packages-and-shiny-apps-devgur1</a></p>
-</div>
-<div class="section level2">
-<h2 id="license">License<a class="anchor" aria-label="anchor" href="#license"></a>
-</h2>
-<p>This package is licensed under the MIT License.</p>
-</div>
-<div class="section level2">
-<h2 id="author">Author<a class="anchor" aria-label="anchor" href="#author"></a>
-</h2>
-<p>Dev Karan Gur</p>
-<p>Monash University – ETC5523: Communicating with Data</p>
+<p>Full documentation, data dictionary, and vignettes are available at: <a href="https://ETC5523-2025.github.io/assignment-4-packages-and-shiny-apps-devgur1/" class="external-link uri">https://ETC5523-2025.github.io/assignment-4-packages-and-shiny-apps-devgur1/</a></p>
 </div>
 </div>
   </div>

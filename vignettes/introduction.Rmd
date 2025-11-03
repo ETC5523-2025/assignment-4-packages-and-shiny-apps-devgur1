@@ -60,16 +60,12 @@ We can use ggplot2 to explore long-term changes in the Fire Weather Index (FWI):
 ```{r}
 library(ggplot2)
 
-ggplot(a2_bushfire, aes(x = year, y = FWI)) +
-  geom_line(color = "#0072B2", linewidth = 1) +
-  geom_smooth(method = "loess", se = FALSE, color = "orange") +
-  theme_minimal(base_size = 13) +
-  labs(
-    title = "Fire Weather Index Trends in Australia (1900–2020)",
-    subtitle = "Higher values indicate increased bushfire risk",
-    x = "Year",
-    y = "Fire Weather Index (FWI)"
-  )
+ggplot(a2_bushfire, aes(year)) +
+  geom_line(aes(y = TX7x, color = "Temperature (TX7x)")) +
+  geom_line(aes(y = Rain_mm / 10, color = "Rainfall (scaled)")) +
+  labs(y = "Value", x = "Year", title = "Temperature vs Rainfall Trends (1900–2020)") +
+  scale_color_manual(values = c("#E69F00", "#56B4E9")) +
+  theme_minimal()
 
 ```
 

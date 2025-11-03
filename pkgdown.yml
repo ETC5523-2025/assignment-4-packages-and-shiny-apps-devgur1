@@ -1,4 +1,4 @@
-# _pkgdown.yml  (root)
+# _pkgdown.yml
 title: "Bushfire Data Explorer"
 url: https://etc5523-2025.github.io/assignment-4-packages-and-shiny-apps-devgur1
 
@@ -25,27 +25,28 @@ navbar:
     - icon: fa-github
       href: https://github.com/ETC5523-2025/assignment-4-packages-and-shiny-apps-devgur1
 
+home:
+  title: "Exploring Australian Bushfire Data with R"
+  description: >
+    An interactive R package that visualises and analyses Australian bushfire data.
+    Includes a Shiny dashboard, datasets, and reproducible documentation
+    built for ETC5523: *Communicating with Data* at Monash University.
+
+  sidebar:
+    structure:
+      - links
+      - license
+      - citation
+      - authors
+
 reference:
-  - title: "🚀 Get started"
+  - title: "🚀 Get Started"
     desc: Quick entry points for users.
     contents:
       - run_app
 
-  - title: "📦 Datasets"
+  - title: "📊 Datasets"
     desc: Data bundled with the package.
     contents:
       - a1_media
       - a2_bushfire
-
-# Optional: if you add helper functions later
-#  - title: "🔧 Utilities"
-#    contents:
-#      - starts_with("plot_")
-#      - matches(".*helper.*")
-
-home:
-  links:
-    - text: Report a bug
-      href: https://github.com/ETC5523-2025/assignment-4-packages-and-shiny-apps-devgur1/issues
-  sidebar:
-    structure: [links, license, citation, authors]

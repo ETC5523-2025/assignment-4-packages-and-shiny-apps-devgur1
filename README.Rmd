@@ -13,42 +13,52 @@ knitr::opts_chunk$set(
 )
 ```
 
-# bushfiredataexplorer
+# Exploring Australian Bushfire Data with R
 
 <!-- badges: start -->
 <!-- badges: end -->
 
-The goal of **bushfiredataexplorer** is to ...
+**bushfiredataexplorer** is an R package that provides Australian bushfire data and an interactive Shiny dashboard for visualising fire-risk trends.  
+It was created for *ETC5523: Communicating with Data* at Monash University.
 
 ## Installation
 
-You can install the development version of **bushfiredataexplorer** from [GitHub](https://github.com/) with:
+You can install the development version of **bushfiredataexplorer** from  
+[GitHub](https://github.com/ETC5523-2025/assignment-4-packages-and-shiny-apps-devgur1) with:
 
-``` r
+```r
 # install.packages("pak")
 pak::pak("ETC5523-2025/assignment-4-packages-and-shiny-apps-devgur1")
+# install.packages("remotes")
+remotes::install_github("ETC5523-2025/assignment-4-packages-and-shiny-apps-devgur1")
 ```
+Repo name: ETC5523-2025/assignment-4-packages-and-shiny-apps-devgur1
+Package name: bushfiredataexplorer
+
+After installation:
+```r
+library(bushfiredataexplorer)
+run_app()
+```
+This launches the Shiny app in your browser.
 
 ## Example
 
-This is a basic example which shows you how we can solve a common problem:
+Here’s a quick example using the dataset included with the package:
 
-```{r}
+```{r example-plot, echo=TRUE, message=FALSE, warning=FALSE}
 library(bushfiredataexplorer)
+data("a2_bushfire")
+
+library(ggplot2)
+ggplot(a2_bushfire, aes(year, FWI)) +
+  geom_line(color = "#0072B2") +
+  geom_smooth(method = "loess", se = FALSE, color = "#E69F00") +
+  labs(title = "Fire Weather Index over time", x = "Year", y = "FWI")
 ```
+The plot shows long-term changes in Fire Weather Index (FWI),
+a measure of bushfire danger influenced by temperature, humidity, and wind speed.
 
-What is special about using `README.Rmd` instead of just `README.md`? We can include R chunks like so:
-
-```{r cars}
-summary(cars)
-```
-
-We'll still need to render `README.Rmd` regularly, to keep `README.md` up-to-date. `devtools::build_readme()` is handy for this.
-
-We can also embed plots, for example:
-
-```{r pressure, echo = FALSE}
-plot(pressure)
-```
-
-In that case, don't forget to commit and push the resulting figure files, so they display on GitHub and CRAN.
+## Documentation
+Full documentation, data dictionary, and vignettes are available at:
+https://ETC5523-2025.github.io/assignment-4-packages-and-shiny-apps-devgur1/

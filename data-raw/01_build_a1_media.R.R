@@ -2,6 +2,7 @@
 # Author: Dev Karan Gur
 # Source: ETC5523 Assignment 1 – Breaking Down Articles
 
+library(usethis)
 library(tibble)
 
 a1_media <- tibble::tibble(

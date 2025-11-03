@@ -1,53 +1,64 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-# bushfiredataexplorer
+# Exploring Australian Bushfire Data with R
 
 <!-- badges: start -->
 
 <!-- badges: end -->
 
-The goal of **bushfiredataexplorer** is to …
+**bushfiredataexplorer** is an R package that provides Australian
+bushfire data and an interactive Shiny dashboard for visualising
+fire-risk trends.  
+It was created for *ETC5523: Communicating with Data* at Monash
+University.
 
 ## Installation
 
-You can install the development version of **bushfiredataexplorer** from
-[GitHub](https://github.com/) with:
+You can install the development version of **bushfiredataexplorer**
+from  
+[GitHub](https://github.com/ETC5523-2025/assignment-4-packages-and-shiny-apps-devgur1)
+with:
 
 ``` r
 # install.packages("pak")
 pak::pak("ETC5523-2025/assignment-4-packages-and-shiny-apps-devgur1")
+# install.packages("remotes")
+remotes::install_github("ETC5523-2025/assignment-4-packages-and-shiny-apps-devgur1")
 ```
 
-## Example
+Repo name: ETC5523-2025/assignment-4-packages-and-shiny-apps-devgur1
+Package name: bushfiredataexplorer
 
-This is a basic example which shows you how we can solve a common
-problem:
+After installation:
 
 ``` r
 library(bushfiredataexplorer)
+run_app()
 ```
 
-What is special about using `README.Rmd` instead of just `README.md`? We
-can include R chunks like so:
+This launches the Shiny app in your browser.
+
+## Example
+
+Here’s a quick example using the dataset included with the package:
 
 ``` r
-summary(cars)
-#>      speed           dist       
-#>  Min.   : 4.0   Min.   :  2.00  
-#>  1st Qu.:12.0   1st Qu.: 26.00  
-#>  Median :15.0   Median : 36.00  
-#>  Mean   :15.4   Mean   : 42.98  
-#>  3rd Qu.:19.0   3rd Qu.: 56.00  
-#>  Max.   :25.0   Max.   :120.00
+library(bushfiredataexplorer)
+data("a2_bushfire")
+
+library(ggplot2)
+ggplot(a2_bushfire, aes(year, FWI)) +
+  geom_line(color = "#0072B2") +
+  geom_smooth(method = "loess", se = FALSE, color = "#E69F00") +
+  labs(title = "Fire Weather Index over time", x = "Year", y = "FWI")
 ```
 
-We’ll still need to render `README.Rmd` regularly, to keep `README.md`
-up-to-date. `devtools::build_readme()` is handy for this.
+<img src="man/figures/README-example-plot-1.png" width="100%" /> The
+plot shows long-term changes in Fire Weather Index (FWI), a measure of
+bushfire danger influenced by temperature, humidity, and wind speed.
 
-We can also embed plots, for example:
+## Documentation
 
-<img src="man/figures/README-pressure-1.png" width="100%" />
-
-In that case, don’t forget to commit and push the resulting figure
-files, so they display on GitHub and CRAN.
+Full documentation, data dictionary, and vignettes are available at:
+<https://ETC5523-2025.github.io/assignment-4-packages-and-shiny-apps-devgur1/>
