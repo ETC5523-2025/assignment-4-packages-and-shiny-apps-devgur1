@@ -23,7 +23,7 @@ It was created for *ETC5523: Communicating with Data* at Monash University.
 
 ## Installation
 
-You can install the development version of **bushfiredataexplorer** from  
+We can install the development version of **bushfiredataexplorer** from  
 [GitHub](https://github.com/ETC5523-2025/assignment-4-packages-and-shiny-apps-devgur1) with:
 
 ```r
@@ -32,7 +32,9 @@ pak::pak("ETC5523-2025/assignment-4-packages-and-shiny-apps-devgur1")
 # install.packages("remotes")
 remotes::install_github("ETC5523-2025/assignment-4-packages-and-shiny-apps-devgur1")
 ```
+
 Repo name: ETC5523-2025/assignment-4-packages-and-shiny-apps-devgur1
+
 Package name: bushfiredataexplorer
 
 After installation:
@@ -40,7 +42,7 @@ After installation:
 library(bushfiredataexplorer)
 run_app()
 ```
-This launches the Shiny app in your browser.
+This launches the Shiny app in the browser.
 
 ## Example
 

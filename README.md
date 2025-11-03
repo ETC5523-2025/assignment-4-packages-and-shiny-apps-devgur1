@@ -15,7 +15,7 @@ University.
 
 ## Installation
 
-You can install the development version of **bushfiredataexplorer**
+We can install the development version of **bushfiredataexplorer**
 from  
 [GitHub](https://github.com/ETC5523-2025/assignment-4-packages-and-shiny-apps-devgur1)
 with:
@@ -28,6 +28,7 @@ remotes::install_github("ETC5523-2025/assignment-4-packages-and-shiny-apps-devgu
 ```
 
 Repo name: ETC5523-2025/assignment-4-packages-and-shiny-apps-devgur1
+
 Package name: bushfiredataexplorer
 
 After installation:
@@ -37,7 +38,7 @@ library(bushfiredataexplorer)
 run_app()
 ```
 
-This launches the Shiny app in your browser.
+This launches the Shiny app in the browser.
 
 ## Example
 
