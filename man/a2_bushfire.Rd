@@ -7,8 +7,8 @@
 \format{
 A tibble with 121 rows and 4 variables:
 \describe{
-\item{year}{Year of observation (1900–2020)}
-\item{FWI}{Fire Weather Index — higher = more dangerous}
+\item{year}{Year (1900–2020)}
+\item{FWI}{Fire Weather Index (higher = more dangerous conditions)}
 \item{TX7x}{7-day mean of daily max temperature (°C)}
 \item{Rain_mm}{Annual rainfall (mm)}
 }
@@ -30,7 +30,7 @@ a2_bushfire
 a2_bushfire
 }
 \description{
-Synthetic dataset representing bushfire risk indicators across 1900–2020.
+Historical Australian bushfire-related metrics 1900–2020.
 
 Synthetic dataset for Assignment 2 (ETC5523) showing indicators of bushfire risk.
 }

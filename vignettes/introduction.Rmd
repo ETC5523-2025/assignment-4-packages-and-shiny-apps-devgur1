@@ -1,8 +1,8 @@
 ---
-title: "introduction"
+title: "Getting Started with the Bushfire Data Explorer"
 output: rmarkdown::html_vignette
 vignette: >
-  %\VignetteIndexEntry{introduction}
+  %\VignetteIndexEntry{Getting Started with the Bushfire Data Explorer}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---
@@ -10,14 +10,95 @@ vignette: >
 ```{r, include = FALSE}
 knitr::opts_chunk$set(
   collapse = TRUE,
-  comment = "#>"
+  comment = "#>", 
+  message = FALSE,
+  warning = FALSE
 )
 ```
 
+
+## Introduction
+
+The Bushfire Data Explorer is an R package designed to help users explore and communicate insights from historical Australian bushfire data.
+It combines datasets (a1_media, a2_bushfire) with analysis functions and an interactive Shiny dashboard to visualise long-term fire trends, temperature anomalies, and rainfall changes from 1900 to 2020.
+
+This vignette demonstrates how to:
+
+1) Load the included datasets
+
+2) Summarise and visualise key variables
+
+3) Launch the interactive Shiny app
+
+## Load the Package
 ```{r setup}
 library(bushfiredataexplorer)
 ```
 
-# Introduction
+## Explore the Data
+The package includes two datasets:
 
-This vignette demonstrates how to load the datasets (`a1_media`, `a2_bushfire`) and explore them using R functions and the Shiny app included in this package.
+- a1_media – communication styles across articles and media types
+
+- a2_bushfire – historical bushfire metrics (Fire Weather Index, Max Temperature, Rainfall)
+
+```{r}
+# Load and preview the bushfire dataset
+
+data("a2_bushfire")
+head(a2_bushfire)
+
+# Display summary statistics
+
+summary(a2_bushfire)
+
+```
+
+## Visualise Bushfire Trends
+
+We can use ggplot2 to explore long-term changes in the Fire Weather Index (FWI):
+```{r}
+library(ggplot2)
+
+ggplot(a2_bushfire, aes(x = year, y = FWI)) +
+  geom_line(color = "#0072B2", linewidth = 1) +
+  geom_smooth(method = "loess", se = FALSE, color = "orange") +
+  theme_minimal(base_size = 13) +
+  labs(
+    title = "Fire Weather Index Trends in Australia (1900–2020)",
+    subtitle = "Higher values indicate increased bushfire risk",
+    x = "Year",
+    y = "Fire Weather Index (FWI)"
+  )
+
+```
+
+## Launch the Interactive Dashboard
+
+```{r}
+# Launch the Shiny app in your RStudio or browser
+
+# run_app()
+
+```
+
+When we run the app, you can:
+
+- Select metrics (FWI, TX7x, Rainfall)
+
+- Adjust year range using the slider
+
+- View dynamic visualisations and summary descriptions
+
+## Conclusion
+
+The Bushfire Data Explorer provides a powerful and easy-to-use framework for exploring environmental and climatic patterns linked to Australian bushfires.
+It demonstrates how R packages can combine data, visualisation, and interactivity to support reproducible communication of complex data.
+
+## Author
+
+Developed by Dev Karan Gur
+
+ETC5523 – Communicating with Data
+
+Monash University (2025)

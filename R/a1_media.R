@@ -1,11 +1,13 @@
 #' A1 Media Communication Dataset
 #'
-#' Contains summarized results from Assignment 1 analysing media communication trends.
+#' Communication styles across articles and media types used in previous assignments.
 #'
-#' @format A tibble with X rows and Y variables:
+#' @format A tibble with N rows and K variables:
 #' \describe{
-#'   \item{variable1}{Description...}
-#'   \item{variable2}{Description...}
+#'   \item{year}{Publication year}
+#'   \item{type}{Media type / channel}
+#'   \item{tone}{Categorised tone (e.g., neutral, alarm, solutions)}
+#'   \item{...}{Other columns as included}
 #' }
-#' @source ETC5523 Assignment 1
+#' @source ETC5523 Assignments 1–2
 "a1_media"

@@ -81,7 +81,7 @@ bushfiredataexplorer::run_app()
 
 ```
 
-## pkgdown Site
+## Pkgdown Site
 A complete documentation website (functions, data, vignette, and app details) is available at:
 https://ETC5523-2025.github.io/assignment-4-packages-and-shiny-apps-devgur1
   
@@ -89,7 +89,9 @@ https://ETC5523-2025.github.io/assignment-4-packages-and-shiny-apps-devgur1
 This package is licensed under the MIT License.
 
 ## Author
+
 Dev Karan Gur
+
 Monash University – ETC5523: Communicating with Data
-Semester 2, 2025
+
 

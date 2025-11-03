@@ -5,16 +5,18 @@
 \alias{a1_media}
 \title{A1 Media Communication Dataset}
 \format{
-A tibble with X rows and Y variables:
+A tibble with N rows and K variables:
 \describe{
-\item{variable1}{Description...}
-\item{variable2}{Description...}
+\item{year}{Publication year}
+\item{type}{Media type / channel}
+\item{tone}{Categorised tone (e.g., neutral, alarm, solutions)}
+\item{...}{Other columns as included}
 }
 
 A tibble with 3 rows and 7 variables (medium, lede, focus, evidence, tone, etc.)
 }
 \source{
-ETC5523 Assignment 1
+ETC5523 Assignments 1–2
 }
 \usage{
 a1_media
@@ -22,7 +24,7 @@ a1_media
 a1_media
 }
 \description{
-Contains summarized results from Assignment 1 analysing media communication trends.
+Communication styles across articles and media types used in previous assignments.
 
 Summary table from Assignment 1 comparing print, blog and video communication styles.
 }

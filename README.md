@@ -40,17 +40,21 @@ pak::pak("ETC5523-2025/assignment-4-packages-and-shiny-apps-devgur1")
 #> 
 #> → Will update 1 package.
 #> → Will download 1 package with unknown size.
-#> + assignment4packagesdevgur1 0.0.1 → 0.0.1 👷🏿‍♂️🔧 ⬇ (GitHub: ddbc95c)
+#> + bushfiredataexplorer 0.0.2 → 0.0.2 👷🏽‍♂️🔧 ⬇ (GitHub: 8b3d1a1)
 #> ℹ Getting 1 pkg with unknown size
-#> ✔ Cached copy of assignment4packagesdevgur1 0.0.1 (source) is the latest build
-#> ✔ Installed assignment4packagesdevgur1 0.0.1 (github::ETC5523-2025/assignment-4-packages-and-shiny-apps-devgur1@ddbc95c) (21ms)
-#> ✔ 1 pkg + 29 deps: kept 26, upd 1 [5.5s]
+#> ✔ Got bushfiredataexplorer 0.0.2 (source) (324.73 kB)
+#> ℹ Packaging bushfiredataexplorer 0.0.2
+#> ✔ Packaged bushfiredataexplorer 0.0.2 (370ms)
+#> ℹ Building bushfiredataexplorer 0.0.2
+#> ✔ Built bushfiredataexplorer 0.0.2 (707ms)
+#> ✔ Installed bushfiredataexplorer 0.0.2 (github::ETC5523-2025/assignment-4-packages-and-shiny-apps-devgur1@8b3d1a1) (20ms)
+#> ✔ 1 pkg + 29 deps: kept 26, upd 1, dld 1 (NA B) [8.8s]
 ```
 
 After installation, you can load the package and launch the app:
 
 ``` r
-library(assignment4packagesdevgur1)
+library(bushfiredataexplorer)
 run_app()
 ```
 
@@ -61,7 +65,7 @@ This will open the Shiny app in the browser.
 This is a basic example which shows you how to solve a common problem:
 
 ``` r
-library(assignment4packagesdevgur1)
+library(bushfiredataexplorer)
 
 # Load the bushfire dataset
 data("a2_bushfire")
@@ -105,5 +109,6 @@ This package is licensed under the MIT License.
 
 ## Author
 
-Dev Karan Gur Monash University – ETC5523: Communicating with Data
-Semester 2, 2025
+Dev Karan Gur
+
+Monash University – ETC5523: Communicating with Data

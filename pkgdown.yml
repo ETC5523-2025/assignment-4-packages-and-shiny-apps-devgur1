@@ -1,5 +1,7 @@
-url: https://etc5523-2025.github.io/assignment-4-packages-and-shiny-apps-devgur1
+# _pkgdown.yml  (root)
 title: "Bushfire Data Explorer"
+url: https://etc5523-2025.github.io/assignment-4-packages-and-shiny-apps-devgur1
+
 template:
   bootstrap: 5
   bootswatch: flatly
@@ -14,9 +16,36 @@ navbar:
     - text: "Reference"
       href: reference/index.html
     - text: "Articles"
-      href: articles/index.html
-    - text: "Vignettes"
-      href: articles/index.html
+      menu:
+        - text: "Getting Started"
+          href: articles/introduction.html
+        - text: "Data & Methods"
+          href: articles/intro.html
   right:
     - icon: fa-github
       href: https://github.com/ETC5523-2025/assignment-4-packages-and-shiny-apps-devgur1
+
+reference:
+  - title: "🚀 Get started"
+    desc: Quick entry points for users.
+    contents:
+      - run_app
+
+  - title: "📦 Datasets"
+    desc: Data bundled with the package.
+    contents:
+      - a1_media
+      - a2_bushfire
+
+# Optional: if you add helper functions later
+#  - title: "🔧 Utilities"
+#    contents:
+#      - starts_with("plot_")
+#      - matches(".*helper.*")
+
+home:
+  links:
+    - text: Report a bug
+      href: https://github.com/ETC5523-2025/assignment-4-packages-and-shiny-apps-devgur1/issues
+  sidebar:
+    structure: [links, license, citation, authors]

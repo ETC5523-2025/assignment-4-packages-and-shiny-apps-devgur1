@@ -5,13 +5,13 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Getting Started with the Bushfire Data Explorer • bushfiredataexplorer</title>
+<title>Data &amp; Methods • bushfiredataexplorer</title>
 <!-- jquery --><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><!-- Bootstrap --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha256-bZLfwXAP04zRMK2BjiO8iu9pf4FbLqX6zitd+tIvLhE=" crossorigin="anonymous">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha256-nuL8/2cJ5NDSSwnKD8VqreErSWHtnEP9E7AySL+1ev4=" crossorigin="anonymous"></script><!-- bootstrap-toc --><link rel="stylesheet" href="../bootstrap-toc.css">
 <script src="../bootstrap-toc.js"></script><!-- Font Awesome icons --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/v4-shims.min.css" integrity="sha256-wZjR52fzng1pJHwx4aV2AO3yyTOXrcDW7jBpJtTwVxw=" crossorigin="anonymous">
 <!-- clipboard.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><!-- headroom.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/headroom.min.js" integrity="sha256-AsUX4SJE1+yuDu5+mAVzJbuYNPHj/WroHuZ8Ir/CkE0=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script><!-- pkgdown --><link href="../pkgdown.css" rel="stylesheet">
-<script src="../pkgdown.js"></script><meta property="og:title" content="Getting Started with the Bushfire Data Explorer">
+<script src="../pkgdown.js"></script><meta property="og:title" content="Data &amp; Methods">
 <!-- mathjax --><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js" integrity="sha256-nvJJv9wWKEm88qvoQl9ekL2J+k/RWIsaSScxxlsrv8k=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/config/TeX-AMS-MML_HTMLorMML.js" integrity="sha256-84DKXVJXs0/F8OTMzX4UR909+jtl4G7SPypPavF+GfA=" crossorigin="anonymous"></script><!--[if lt IE 9]>
 <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
 <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
@@ -49,10 +49,10 @@
   </a>
   <ul class="dropdown-menu" role="menu">
 <li>
-      <a href="../articles/intro.html">Getting Started with the Bushfire Data Explorer</a>
+      <a href="../articles/intro.html">Data &amp; Methods</a>
     </li>
     <li>
-      <a href="../articles/introduction.html">introduction</a>
+      <a href="../articles/introduction.html">Getting Started with the Bushfire Data Explorer</a>
     </li>
   </ul>
 </li>
@@ -77,8 +77,7 @@
       </header><div class="row">
   <div class="col-md-9 contents">
     <div class="page-header toc-ignore">
-      <h1 data-toc-skip>Getting Started with the Bushfire Data
-Explorer</h1>
+      <h1 data-toc-skip>Data &amp; Methods</h1>
             
       
       <small class="dont-index">Source: <a href="https://github.com/ETC5523-2025/assignment-4-packages-and-shiny-apps-devgur1/blob/HEAD/vignettes/intro.Rmd" class="external-link"><code>vignettes/intro.Rmd</code></a></small>
@@ -88,51 +87,127 @@ Explorer</h1>
 
     
     
-<p>vignette: &gt; % % %</p>
 <div class="section level2">
-<h2 id="introduction">Introduction<a class="anchor" aria-label="anchor" href="#introduction"></a>
+<h2 id="overview">Overview<a class="anchor" aria-label="anchor" href="#overview"></a>
 </h2>
-<p>This vignette demonstrates how to explore the datasets and run the
-interactive Shiny dashboard provided in the Bushfire Data Explorer
-package.</p>
-<div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/ETC5523-2025/assignment-4-packages-and-shiny-apps-devgur1" class="external-link">bushfiredataexplorer</a></span><span class="op">)</span></span></code></pre></div>
+<p>This vignette explains how the datasets were prepared, cleaned, and
+structured for inclusion in the Bushfire Data Explorer package. It
+highlights preprocessing steps, handling of missing values, and feature
+creation — ensuring data integrity and reproducibility.</p>
 </div>
 <div class="section level2">
-<h2 id="explore-the-data">Explore the Data<a class="anchor" aria-label="anchor" href="#explore-the-data"></a>
+<h2 id="data-sources">Data Sources<a class="anchor" aria-label="anchor" href="#data-sources"></a>
 </h2>
-<p>The package includes two datasets:</p>
+<p>Two datasets were used:</p>
+<ol style="list-style-type: decimal">
+<li><p>a1_media — Summarising media coverage and communication styles
+across Australian news articles.</p></li>
+<li><p>a2_bushfire — Historical bushfire-related climate metrics from
+1900–2020, including:</p></li>
+</ol>
 <ul>
-<li><p>a1_media – Communication styles across articles and media
-types</p></li>
-<li><p>a2_bushfire – Historical bushfire metrics (FWI, TX7x,
-Rain_mm)</p></li>
+<li><p>Fire Weather Index (FWI)</p></li>
+<li><p>Maximum Temperature (TX7x)</p></li>
+<li><p>Annual Rainfall (Rain_mm)</p></li>
 </ul>
-<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="va">a2_bushfire</span><span class="op">)</span></span>
-<span><span class="co">#&gt;   year       FWI     TX7x  Rain_mm</span></span>
-<span><span class="co">#&gt; 1 1900 12.741917 28.52956 625.1696</span></span>
-<span><span class="co">#&gt; 2 1901  9.203937 30.24970 623.3106</span></span>
-<span><span class="co">#&gt; 3 1902 11.392923 29.25336 569.0539</span></span>
-<span><span class="co">#&gt; 4 1903 12.265725 30.37318 635.9992</span></span>
-<span><span class="co">#&gt; 5 1904 12.141870 30.07174 613.6708</span></span>
-<span><span class="co">#&gt; 6 1905 11.454418 30.01133 591.1323</span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/base/summary.html" class="external-link">summary</a></span><span class="op">(</span><span class="va">a2_bushfire</span><span class="op">)</span></span>
-<span><span class="co">#&gt;       year           FWI              TX7x          Rain_mm     </span></span>
-<span><span class="co">#&gt;  Min.   :1900   Min.   : 9.204   Min.   :28.53   Min.   :373.5  </span></span>
-<span><span class="co">#&gt;  1st Qu.:1930   1st Qu.:20.096   1st Qu.:33.66   1st Qu.:448.6  </span></span>
-<span><span class="co">#&gt;  Median :1960   Median :30.236   Median :37.54   Median :500.8  </span></span>
-<span><span class="co">#&gt;  Mean   :1960   Mean   :30.034   Mean   :37.41   Mean   :499.4  </span></span>
-<span><span class="co">#&gt;  3rd Qu.:1990   3rd Qu.:39.692   3rd Qu.:41.44   3rd Qu.:556.2  </span></span>
-<span><span class="co">#&gt;  Max.   :2020   Max.   :54.404   Max.   :46.00   Max.   :636.0</span></span></code></pre></div>
 </div>
 <div class="section level2">
-<h2 id="launch-the-interactive-dashboard">Launch the Interactive Dashboard<a class="anchor" aria-label="anchor" href="#launch-the-interactive-dashboard"></a>
+<h2 id="data-preparation-workflow">Data Preparation Workflow<a class="anchor" aria-label="anchor" href="#data-preparation-workflow"></a>
 </h2>
-<p>We can explore both datasets using the built-in Shiny app.</p>
+<p>Data cleaning and transformation steps were automated using
+reproducible R scripts in the data-raw/ folder:</p>
+<ol style="list-style-type: decimal">
+<li><p>Importing raw data CSV files were read using readr::read_csv()
+and checked for missing or inconsistent values.</p></li>
+<li><p>Variable standardisation Column names were converted to lower
+case; units were harmonised (e.g., rainfall in mm, temperature in
+°C).</p></li>
+<li><p>Handling missing values Missing yearly values were interpolated
+where appropriate using zoo::na.approx() for continuous
+variables.</p></li>
+<li><p>Feature creation Derived metrics such as mean annual rainfall and
+fire-weather index averages were computed using dplyr.</p></li>
+<li><p>Saving for package use The cleaned datasets were saved as .rda
+objects via:</p></li>
+</ol>
+<div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="co"># usethis::use_data(a1_media, a2_bushfire, overwrite = TRUE)</span></span></code></pre></div>
+</div>
+<div class="section level2">
+<h2 id="methods">Methods<a class="anchor" aria-label="anchor" href="#methods"></a>
+</h2>
+<p>The analysis methods used in this package combine descriptive
+statistics, time-series smoothing, and visualisation through
+ggplot2.</p>
+<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/ETC5523-2025/assignment-4-packages-and-shiny-apps-devgur1" class="external-link">bushfiredataexplorer</a></span><span class="op">)</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://dplyr.tidyverse.org" class="external-link">dplyr</a></span><span class="op">)</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://ggplot2.tidyverse.org" class="external-link">ggplot2</a></span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># Inspect the dataset structure</span></span>
+<span></span>
+<span><span class="fu"><a href="https://pillar.r-lib.org/reference/glimpse.html" class="external-link">glimpse</a></span><span class="op">(</span><span class="va">a2_bushfire</span><span class="op">)</span></span>
+<span><span class="co">#&gt; Rows: 121</span></span>
+<span><span class="co">#&gt; Columns: 4</span></span>
+<span><span class="co">#&gt; $ year    <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> 1900<span style="color: #949494;">, </span>1901<span style="color: #949494;">, </span>1902<span style="color: #949494;">, </span>1903<span style="color: #949494;">, </span>1904<span style="color: #949494;">, </span>1905<span style="color: #949494;">, </span>1906<span style="color: #949494;">, </span>1907<span style="color: #949494;">, </span>1908<span style="color: #949494;">, </span>1909<span style="color: #949494;">, </span>19…</span></span>
+<span><span class="co">#&gt; $ FWI     <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> 12.741917<span style="color: #949494;">, </span>9.203937<span style="color: #949494;">, </span>11.392923<span style="color: #949494;">, </span>12.265725<span style="color: #949494;">, </span>12.141870<span style="color: #949494;">, </span>11.45441…</span></span>
+<span><span class="co">#&gt; $ TX7x    <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> 28.52956<span style="color: #949494;">, </span>30.24970<span style="color: #949494;">, </span>29.25336<span style="color: #949494;">, </span>30.37318<span style="color: #949494;">, </span>30.07174<span style="color: #949494;">, </span>30.01133<span style="color: #949494;">, </span>28…</span></span>
+<span><span class="co">#&gt; $ Rain_mm <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> 625.1696<span style="color: #949494;">, </span>623.3106<span style="color: #949494;">, </span>569.0539<span style="color: #949494;">, </span>635.9992<span style="color: #949494;">, </span>613.6708<span style="color: #949494;">, </span>591.1323<span style="color: #949494;">, </span>60…</span></span>
+<span></span>
+<span><span class="co"># Example summarisation</span></span>
+<span></span>
+<span><span class="va">a2_bushfire</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span></span>
+<span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/summarise.html" class="external-link">summarise</a></span><span class="op">(</span></span>
+<span>mean_FWI <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/mean.html" class="external-link">mean</a></span><span class="op">(</span><span class="va">FWI</span>, na.rm <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span>,</span>
+<span>mean_TX7x <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/mean.html" class="external-link">mean</a></span><span class="op">(</span><span class="va">TX7x</span>, na.rm <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span>,</span>
+<span>mean_Rain <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/mean.html" class="external-link">mean</a></span><span class="op">(</span><span class="va">Rain_mm</span>, na.rm <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span>
+<span><span class="op">)</span></span>
+<span><span class="co">#&gt; <span style="color: #949494;"># A tibble: 1 × 3</span></span></span>
+<span><span class="co">#&gt;   mean_FWI mean_TX7x mean_Rain</span></span>
+<span><span class="co">#&gt;      <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span></span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">1</span>     30.0      37.4      499.</span></span></code></pre></div>
+</div>
+<div class="section level2">
+<h2 id="summary-visualisation">Summary Visualisation<a class="anchor" aria-label="anchor" href="#summary-visualisation"></a>
+</h2>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="co"># Launch the Shiny app (run in RStudio, not in static docs)</span></span>
-<span><span class="co"># run_app()</span></span></code></pre></div>
+<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://tidyr.tidyverse.org" class="external-link">tidyr</a></span><span class="op">)</span></span>
+<span><span class="va">a2_long</span> <span class="op">&lt;-</span> <span class="va">a2_bushfire</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu"><a href="https://tidyr.tidyverse.org/reference/pivot_longer.html" class="external-link">pivot_longer</a></span><span class="op">(</span><span class="op">-</span><span class="va">year</span>, names_to <span class="op">=</span> <span class="st">"metric"</span>, values_to <span class="op">=</span> <span class="st">"value"</span><span class="op">)</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html" class="external-link">mutate</a></span><span class="op">(</span>metric <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/factor.html" class="external-link">factor</a></span><span class="op">(</span><span class="va">metric</span>, levels <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"FWI"</span>,<span class="st">"TX7x"</span>,<span class="st">"Rain_mm"</span><span class="op">)</span>,</span>
+<span>                         labels <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"Fire Weather Index (FWI)"</span>,</span>
+<span>                                    <span class="st">"Max Temp (TX7x, °C)"</span>,</span>
+<span>                                    <span class="st">"Annual Rain (mm)"</span><span class="op">)</span><span class="op">)</span><span class="op">)</span></span>
+<span></span>
+<span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html" class="external-link">ggplot</a></span><span class="op">(</span><span class="va">a2_long</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html" class="external-link">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">year</span>, y <span class="op">=</span> <span class="va">value</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_path.html" class="external-link">geom_line</a></span><span class="op">(</span>linewidth <span class="op">=</span> <span class="fl">0.7</span>, alpha <span class="op">=</span> <span class="fl">0.8</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_smooth.html" class="external-link">geom_smooth</a></span><span class="op">(</span>se <span class="op">=</span> <span class="cn">FALSE</span>, method <span class="op">=</span> <span class="st">"loess"</span>, span <span class="op">=</span> <span class="fl">0.25</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/facet_wrap.html" class="external-link">facet_wrap</a></span><span class="op">(</span><span class="op">~</span> <span class="va">metric</span>, scales <span class="op">=</span> <span class="st">"free_y"</span>, ncol <span class="op">=</span> <span class="fl">1</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html" class="external-link">labs</a></span><span class="op">(</span></span>
+<span>    title <span class="op">=</span> <span class="st">"Bushfire Metrics Over Time (1900–2020)"</span>,</span>
+<span>    x <span class="op">=</span> <span class="st">"Year"</span>, y <span class="op">=</span> <span class="cn">NULL</span></span>
+<span>  <span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggtheme.html" class="external-link">theme_minimal</a></span><span class="op">(</span>base_size <span class="op">=</span> <span class="fl">13</span><span class="op">)</span></span></code></pre></div>
+<p><img src="intro_files/figure-html/unnamed-chunk-4-1.png" width="700"></p>
+</div>
+<div class="section level2">
+<h2 id="reproducibility-and-tools">Reproducibility and Tools<a class="anchor" aria-label="anchor" href="#reproducibility-and-tools"></a>
+</h2>
+<p>The package was built with:</p>
+<ul>
+<li><p>Roxygen2 for documentation</p></li>
+<li><p>pkgdown for static site generation</p></li>
+<li><p>Shiny for interactive dashboards</p></li>
+<li><p>ggplot2 and dplyr for visualisation and data wrangling</p></li>
+</ul>
+<p>All analyses are reproducible using the provided functions and
+scripts, ensuring transparency and replicability.</p>
+</div>
+<div class="section level2">
+<h2 id="citation">Citation<a class="anchor" aria-label="anchor" href="#citation"></a>
+</h2>
+<p>Gur, D. K. (2025). Bushfire Data Explorer (R package version 0.0.2).
+Monash University, ETC5523 – Communicating with Data.</p>
 </div>
   </div>
 

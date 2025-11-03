@@ -2,10 +2,18 @@
 % Please edit documentation in R/run_app.R
 \name{run_app}
 \alias{run_app}
-\title{Launch the Shiny App for ETC5523 A4}
+\title{Launch the Shiny App}
 \usage{
 run_app()
 }
+\value{
+Invisibly returns \code{NULL}. Called for its side-effect of launching the app.
+}
 \description{
-Opens the Shiny app packaged under inst/app.
+Opens the interactive Bushfire Data Explorer in your browser.
+}
+\examples{
+\dontrun{
+  run_app()
+}
 }

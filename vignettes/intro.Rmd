@@ -1,12 +1,11 @@
 ---
-title: "Getting Started with the Bushfire Data Explorer"
+title: "Data & Methods"
 output: rmarkdown::html_vignette
----
-
 vignette: >
-  %\VignetteIndexEntry{Getting Started with the Bushfire Data Explorer}
+  %\VignetteIndexEntry{Data & Methods}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
+---
 
 
 ```{r, include = FALSE}
@@ -18,29 +17,102 @@ knitr::opts_chunk$set(
 )
 ```
 
-## Introduction
-This vignette demonstrates how to explore the datasets and run the interactive Shiny dashboard provided in the Bushfire Data Explorer package.
+## Overview
+This vignette explains how the datasets were prepared, cleaned, and structured for inclusion in the Bushfire Data Explorer package.
+It highlights preprocessing steps, handling of missing values, and feature creation — ensuring data integrity and reproducibility.
+
+## Data Sources
+Two datasets were used:
+
+1) a1_media — Summarising media coverage and communication styles across Australian news articles.
+
+2) a2_bushfire — Historical bushfire-related climate metrics from 1900–2020, including:
+
+- Fire Weather Index (FWI)
+
+- Maximum Temperature (TX7x)
+
+- Annual Rainfall (Rain_mm)
+
+
+## Data Preparation Workflow
+Data cleaning and transformation steps were automated using reproducible R scripts in the data-raw/ folder:
+
+1) Importing raw data
+CSV files were read using readr::read_csv() and checked for missing or inconsistent values.
+
+2) Variable standardisation
+Column names were converted to lower case; units were harmonised (e.g., rainfall in mm, temperature in °C).
+
+3) Handling missing values
+Missing yearly values were interpolated where appropriate using zoo::na.approx() for continuous variables.
+
+4) Feature creation
+Derived metrics such as mean annual rainfall and fire-weather index averages were computed using dplyr.
+
+5) Saving for package use
+The cleaned datasets were saved as .rda objects via:
+```{r}
+# usethis::use_data(a1_media, a2_bushfire, overwrite = TRUE)
+```
+
+## Methods
+
+The analysis methods used in this package combine descriptive statistics, time-series smoothing, and visualisation through ggplot2.
 ```{r}
 library(bushfiredataexplorer)
+library(dplyr)
+library(ggplot2)
+
+# Inspect the dataset structure
+
+glimpse(a2_bushfire)
+
+# Example summarisation
+
+a2_bushfire %>%
+summarise(
+mean_FWI = mean(FWI, na.rm = TRUE),
+mean_TX7x = mean(TX7x, na.rm = TRUE),
+mean_Rain = mean(Rain_mm, na.rm = TRUE)
+)
 ```
 
-## Explore the Data
-The package includes two datasets:
-
-- a1_media – Communication styles across articles and media types
-
-- a2_bushfire – Historical bushfire metrics (FWI, TX7x, Rain_mm)
-
+## Summary Visualisation
 ```{r}
-head(a2_bushfire)
-summary(a2_bushfire)
+library(tidyr)
+a2_long <- a2_bushfire |>
+  pivot_longer(-year, names_to = "metric", values_to = "value") |>
+  mutate(metric = factor(metric, levels = c("FWI","TX7x","Rain_mm"),
+                         labels = c("Fire Weather Index (FWI)",
+                                    "Max Temp (TX7x, °C)",
+                                    "Annual Rain (mm)")))
 
+ggplot(a2_long, aes(x = year, y = value)) +
+  geom_line(linewidth = 0.7, alpha = 0.8) +
+  geom_smooth(se = FALSE, method = "loess", span = 0.25) +
+  facet_wrap(~ metric, scales = "free_y", ncol = 1) +
+  labs(
+    title = "Bushfire Metrics Over Time (1900–2020)",
+    x = "Year", y = NULL
+  ) +
+  theme_minimal(base_size = 13)
 ```
 
-## Launch the Interactive Dashboard
-We can explore both datasets using the built-in Shiny app.
-```{r}
-# Launch the Shiny app (run in RStudio, not in static docs)
-# run_app()
-```
+## Reproducibility and Tools
+
+The package was built with:
+
+- Roxygen2 for documentation
+
+- pkgdown for static site generation
+
+- Shiny for interactive dashboards
+
+- ggplot2 and dplyr for visualisation and data wrangling
+
+All analyses are reproducible using the provided functions and scripts, ensuring transparency and replicability.
+
+## Citation
+Gur, D. K. (2025). Bushfire Data Explorer (R package version 0.0.2). Monash University, ETC5523 – Communicating with Data.
 
