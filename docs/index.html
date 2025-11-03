@@ -98,7 +98,7 @@
 <div class="section level2">
 <h2 id="installation">Installation<a class="anchor" aria-label="anchor" href="#installation"></a>
 </h2>
-<p>You can install the development version of assignment4packagesdevgur1 from <a href="https://github.com/" class="external-link">GitHub</a> with:</p>
+<p>We can install the development version of <strong>bushfiredataexplorer</strong> from <a href="https://github.com/" class="external-link">GitHub</a> with:</p>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># install.packages("pak")</span></span>
 <span><span class="fu">pak</span><span class="fu">::</span><span class="fu"><a href="https://pak.r-lib.org/reference/pak.html" class="external-link">pak</a></span><span class="op">(</span><span class="st">"ETC5523-2025/assignment-4-packages-and-shiny-apps-devgur1"</span><span class="op">)</span></span>
@@ -108,28 +108,32 @@
 <span><span class="co">#&gt; </span></span>
 <span><span class="co">#&gt; → Will update 1 package.</span></span>
 <span><span class="co">#&gt; → Will download 1 package with unknown size.</span></span>
-<span><span class="co">#&gt; + assignment4packagesdevgur1 0.0.1 → 0.0.1 👷🏿‍♂️🔧 ⬇ (GitHub: ddbc95c)</span></span>
+<span><span class="co">#&gt; + bushfiredataexplorer 0.0.2 → 0.0.2 👷🏽‍♂️🔧 ⬇ (GitHub: 8b3d1a1)</span></span>
 <span><span class="co">#&gt; ℹ Getting 1 pkg with unknown size</span></span>
-<span><span class="co">#&gt; ✔ Cached copy of assignment4packagesdevgur1 0.0.1 (source) is the latest build</span></span>
-<span><span class="co">#&gt; ✔ Installed assignment4packagesdevgur1 0.0.1 (github::ETC5523-2025/assignment-4-packages-and-shiny-apps-devgur1@ddbc95c) (21ms)</span></span>
-<span><span class="co">#&gt; ✔ 1 pkg + 29 deps: kept 26, upd 1 [5.5s]</span></span></code></pre></div>
-<p>After installation, you can load the package and launch the app:</p>
+<span><span class="co">#&gt; ✔ Got bushfiredataexplorer 0.0.2 (source) (324.73 kB)</span></span>
+<span><span class="co">#&gt; ℹ Packaging bushfiredataexplorer 0.0.2</span></span>
+<span><span class="co">#&gt; ✔ Packaged bushfiredataexplorer 0.0.2 (370ms)</span></span>
+<span><span class="co">#&gt; ℹ Building bushfiredataexplorer 0.0.2</span></span>
+<span><span class="co">#&gt; ✔ Built bushfiredataexplorer 0.0.2 (707ms)</span></span>
+<span><span class="co">#&gt; ✔ Installed bushfiredataexplorer 0.0.2 (github::ETC5523-2025/assignment-4-packages-and-shiny-apps-devgur1@8b3d1a1) (20ms)</span></span>
+<span><span class="co">#&gt; ✔ 1 pkg + 29 deps: kept 26, upd 1, dld 1 (NA B) [8.8s]</span></span></code></pre></div>
+<p>After installation, we can load the package and launch the app:</p>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/ETC5523-2025/assignment-4-packages-and-shiny-apps-devgur1" class="external-link">assignment4packagesdevgur1</a></span><span class="op">)</span></span>
+<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/ETC5523-2025/assignment-4-packages-and-shiny-apps-devgur1" class="external-link">bushfiredataexplorer</a></span><span class="op">)</span></span>
 <span><span class="fu"><a href="reference/run_app.html">run_app</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
 <p>This will open the Shiny app in the browser.</p>
 </div>
 <div class="section level2">
 <h2 id="example">Example<a class="anchor" aria-label="anchor" href="#example"></a>
 </h2>
-<p>This is a basic example which shows you how to solve a common problem:</p>
+<p>This is a basic example which shows how we can solve a common problem:</p>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/ETC5523-2025/assignment-4-packages-and-shiny-apps-devgur1" class="external-link">bushfiredataexplorer</a></span><span class="op">)</span></span>
 <span></span>
-<span><span class="co"># Load the bushfire dataset</span></span>
+<span><span class="co"># Loading the bushfire dataset</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/utils/data.html" class="external-link">data</a></span><span class="op">(</span><span class="st">"a2_bushfire"</span><span class="op">)</span></span>
 <span></span>
-<span><span class="co"># Display summary</span></span>
+<span><span class="co"># Displaying summary</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/base/summary.html" class="external-link">summary</a></span><span class="op">(</span><span class="va">a2_bushfire</span><span class="op">)</span></span>
 <span><span class="co">#&gt;       year           FWI              TX7x          Rain_mm     </span></span>
 <span><span class="co">#&gt;  Min.   :1900   Min.   : 9.204   Min.   :28.53   Min.   :373.5  </span></span>

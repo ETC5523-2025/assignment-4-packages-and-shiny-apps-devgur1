@@ -1,7 +1,6 @@
 ---
-title: "Exploring Australian Bushfire Data with R"
-format: gfm
---- 
+output: github_document
+---
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
@@ -14,84 +13,42 @@ knitr::opts_chunk$set(
 )
 ```
 
+# bushfiredataexplorer
+
 <!-- badges: start -->
 <!-- badges: end -->
 
-The goal of this package is to provide an interactive way to explore and communicate insights from the Australian Bushfire dataset used in earlier assignments for ETC5523-Communicating with Data.
-It combines data, analysis functions, and a Shiny dashboard to help users visualise bushfire trends and understand key relationships between fire weather, temperature anomalies, and geographic regions.
-
-## Features
-
-- Contains the dataset a2_bushfire as an .rda object
-
-- Includes preprocessing and cleaning scripts inside data-raw/
-
-- Provides a Shiny app (inst/app/app.R) for interactive visualisation
-
-- Includes documentation generated with roxygen2
-
-- Fully installable as an R package and deployable with pkgdown
-
+The goal of **bushfiredataexplorer** is to ...
 
 ## Installation
 
-You can install the development version of assignment4packagesdevgur1 from [GitHub](https://github.com/) with:
+You can install the development version of **bushfiredataexplorer** from [GitHub](https://github.com/) with:
 
-```{r install, echo=TRUE}
+``` r
 # install.packages("pak")
 pak::pak("ETC5523-2025/assignment-4-packages-and-shiny-apps-devgur1")
 ```
 
-After installation, you can load the package and launch the app:
-
-```{r, eval=FALSE, message=FALSE, warning=FALSE, echo=TRUE}
-library(bushfiredataexplorer)
-run_app()
-```
-This will open the Shiny app in the browser.
-
 ## Example
 
-This is a basic example which shows you how to solve a common problem:
+This is a basic example which shows you how we can solve a common problem:
 
-```{r example}
+```{r}
 library(bushfiredataexplorer)
-
-# Load the bushfire dataset
-data("a2_bushfire")
-
-# Display summary
-summary(a2_bushfire)
-``` 
-
-## The Shiny App
-
-The interactive dashboard allows you to:
-
-- Select regions or years to explore bushfire data
-
-- Visualise key trends in temperature, rainfall, and fire severity
-
-- Interpret results through descriptive text panels
-
-To run it directly:
-
-```{r, eval=FALSE, echo=TRUE}
-bushfiredataexplorer::run_app()
-
 ```
 
-## Pkgdown Site
-A complete documentation website (functions, data, vignette, and app details) is available at:
-https://ETC5523-2025.github.io/assignment-4-packages-and-shiny-apps-devgur1
-  
-## License
-This package is licensed under the MIT License.
+What is special about using `README.Rmd` instead of just `README.md`? We can include R chunks like so:
 
-## Author
+```{r cars}
+summary(cars)
+```
 
-Dev Karan Gur
+We'll still need to render `README.Rmd` regularly, to keep `README.md` up-to-date. `devtools::build_readme()` is handy for this.
 
-Monash University – ETC5523: Communicating with Data
+We can also embed plots, for example:
 
+```{r pressure, echo = FALSE}
+plot(pressure)
+```
 
+In that case, don't forget to commit and push the resulting figure files, so they display on GitHub and CRAN.

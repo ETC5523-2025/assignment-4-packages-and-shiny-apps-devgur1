@@ -95,10 +95,4 @@ When we run the app, you can:
 The Bushfire Data Explorer provides a powerful and easy-to-use framework for exploring environmental and climatic patterns linked to Australian bushfires.
 It demonstrates how R packages can combine data, visualisation, and interactivity to support reproducible communication of complex data.
 
-## Author
 
-Developed by Dev Karan Gur
-
-ETC5523 – Communicating with Data
-
-Monash University (2025)

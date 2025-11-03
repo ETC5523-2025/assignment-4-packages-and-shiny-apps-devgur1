@@ -113,6 +113,4 @@ The package was built with:
 
 All analyses are reproducible using the provided functions and scripts, ensuring transparency and replicability.
 
-## Citation
-Gur, D. K. (2025). Bushfire Data Explorer (R package version 0.0.2). Monash University, ETC5523 – Communicating with Data.
 

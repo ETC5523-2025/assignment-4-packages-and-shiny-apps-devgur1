@@ -10,10 +10,10 @@ library(bslib)
 library(dplyr)
 library(ggplot2)
 
-# Load dataset
-data("a2_bushfire", package = "assignment4packagesdevgur1")
+# Loading the dataset
+data("a2_bushfire", package = "bushfiredataexplorer")
 
-# Define UI
+# Defining UI
 ui <- navbarPage(
   title = "Communicating with Data – Dev Karan Gur",
   theme = bs_theme(bootswatch = "flatly"),
@@ -43,16 +43,16 @@ ui <- navbarPage(
   )
 )
 
-# Define server logic
+# Defining server logic
 server <- function(input, output, session) {
 
-  # Filter dataset based on user input
+  # Filtering dataset based on user input
   filtered_data <- reactive({
     a2_bushfire %>%
       filter(year >= input$year_rng[1], year <= input$year_rng[2])
   })
 
-  # Create trend plot
+  # Creating trend plot
   output$trendPlot <- renderPlot({
     ggplot(filtered_data(), aes(x = year, y = .data[[input$metric]])) +
       geom_line(color = "#0072B2", size = 1) +
@@ -78,5 +78,5 @@ server <- function(input, output, session) {
   })
 }
 
-# Run the app
+# Running the app
 shinyApp(ui = ui, server = server)

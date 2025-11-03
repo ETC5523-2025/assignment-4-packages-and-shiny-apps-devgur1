@@ -1,114 +1,53 @@
-# Exploring Australian Bushfire Data with R
-
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
+
+# bushfiredataexplorer
 
 <!-- badges: start -->
 
 <!-- badges: end -->
 
-The goal of this package is to provide an interactive way to explore and
-communicate insights from the Australian Bushfire dataset used in
-earlier assignments for ETC5523-Communicating with Data. It combines
-data, analysis functions, and a Shiny dashboard to help users visualise
-bushfire trends and understand key relationships between fire weather,
-temperature anomalies, and geographic regions.
-
-## Features
-
-- Contains the dataset a2_bushfire as an .rda object
-
-- Includes preprocessing and cleaning scripts inside data-raw/
-
-- Provides a Shiny app (inst/app/app.R) for interactive visualisation
-
-- Includes documentation generated with roxygen2
-
-- Fully installable as an R package and deployable with pkgdown
+The goal of **bushfiredataexplorer** is to …
 
 ## Installation
 
-You can install the development version of assignment4packagesdevgur1
-from [GitHub](https://github.com/) with:
+You can install the development version of **bushfiredataexplorer** from
+[GitHub](https://github.com/) with:
 
 ``` r
 # install.packages("pak")
 pak::pak("ETC5523-2025/assignment-4-packages-and-shiny-apps-devgur1")
-#> ℹ Loading metadata database
-#> ✔ Loading metadata database ... done
-#> 
-#> 
-#> → Will update 1 package.
-#> → Will download 1 package with unknown size.
-#> + bushfiredataexplorer 0.0.2 → 0.0.2 👷🏽‍♂️🔧 ⬇ (GitHub: 8b3d1a1)
-#> ℹ Getting 1 pkg with unknown size
-#> ✔ Got bushfiredataexplorer 0.0.2 (source) (324.73 kB)
-#> ℹ Packaging bushfiredataexplorer 0.0.2
-#> ✔ Packaged bushfiredataexplorer 0.0.2 (370ms)
-#> ℹ Building bushfiredataexplorer 0.0.2
-#> ✔ Built bushfiredataexplorer 0.0.2 (707ms)
-#> ✔ Installed bushfiredataexplorer 0.0.2 (github::ETC5523-2025/assignment-4-packages-and-shiny-apps-devgur1@8b3d1a1) (20ms)
-#> ✔ 1 pkg + 29 deps: kept 26, upd 1, dld 1 (NA B) [8.8s]
 ```
-
-After installation, you can load the package and launch the app:
-
-``` r
-library(bushfiredataexplorer)
-run_app()
-```
-
-This will open the Shiny app in the browser.
 
 ## Example
 
-This is a basic example which shows you how to solve a common problem:
+This is a basic example which shows you how we can solve a common
+problem:
 
 ``` r
 library(bushfiredataexplorer)
-
-# Load the bushfire dataset
-data("a2_bushfire")
-
-# Display summary
-summary(a2_bushfire)
-#>       year           FWI              TX7x          Rain_mm     
-#>  Min.   :1900   Min.   : 9.204   Min.   :28.53   Min.   :373.5  
-#>  1st Qu.:1930   1st Qu.:20.096   1st Qu.:33.66   1st Qu.:448.6  
-#>  Median :1960   Median :30.236   Median :37.54   Median :500.8  
-#>  Mean   :1960   Mean   :30.034   Mean   :37.41   Mean   :499.4  
-#>  3rd Qu.:1990   3rd Qu.:39.692   3rd Qu.:41.44   3rd Qu.:556.2  
-#>  Max.   :2020   Max.   :54.404   Max.   :46.00   Max.   :636.0
 ```
 
-## The Shiny App
-
-The interactive dashboard allows you to:
-
-- Select regions or years to explore bushfire data
-
-- Visualise key trends in temperature, rainfall, and fire severity
-
-- Interpret results through descriptive text panels
-
-To run it directly:
+What is special about using `README.Rmd` instead of just `README.md`? We
+can include R chunks like so:
 
 ``` r
-bushfiredataexplorer::run_app()
+summary(cars)
+#>      speed           dist       
+#>  Min.   : 4.0   Min.   :  2.00  
+#>  1st Qu.:12.0   1st Qu.: 26.00  
+#>  Median :15.0   Median : 36.00  
+#>  Mean   :15.4   Mean   : 42.98  
+#>  3rd Qu.:19.0   3rd Qu.: 56.00  
+#>  Max.   :25.0   Max.   :120.00
 ```
 
-## Pkgdown Site
+We’ll still need to render `README.Rmd` regularly, to keep `README.md`
+up-to-date. `devtools::build_readme()` is handy for this.
 
-A complete documentation website (functions, data, vignette, and app
-details) is available at:
-https://ETC5523-2025.github.io/assignment-4-packages-and-shiny-apps-devgur1
+We can also embed plots, for example:
 
-## License
+<img src="man/figures/README-pressure-1.png" width="100%" />
 
-This package is licensed under the MIT License.
-
-## Author
-
-Dev Karan Gur
-
-Monash University – ETC5523: Communicating with Data
+In that case, don’t forget to commit and push the resulting figure
+files, so they display on GitHub and CRAN.
